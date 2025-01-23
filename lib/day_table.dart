@@ -2,21 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 
-class CalendarPage extends StatefulWidget {
-  @override
-  _CalendarPageState createState() => _CalendarPageState();
-}
+class Day_page extends StatelessWidget {
+  final int  selectedDay;
 
-class _CalendarPageState extends State<CalendarPage> {
-  late DateTime _selectedDay;
-  late DateTime _focusedDay;
 
-  @override
-  void initState() {
-    super.initState();
-    _selectedDay = DateTime.now();
-    _focusedDay = DateTime.now();
-  }
+  Day_page({required this.selectedDay});
 
   @override
   Widget build(BuildContext context) {
@@ -26,20 +16,8 @@ class _CalendarPageState extends State<CalendarPage> {
       ),
       body: Column(
         children: [
-          TableCalendar(
-            firstDay: DateTime(1990),
-            lastDay: DateTime(2260),
-            focusedDay: _focusedDay,
-            selectedDayPredicate: (day) => isSameDay(_selectedDay, day),
-            onDaySelected: (selectedDay, focusedDay) {
-              setState(() {
-                _selectedDay = selectedDay;
-                _focusedDay = focusedDay;
-              });
-            },
-          ),
           Expanded(
-            child: HourlyTimetable(selectedDay: _selectedDay),
+            child: HourlyTimetable(selectedDay: selectedDay),
           ),
         ],
       ),
@@ -48,14 +26,14 @@ class _CalendarPageState extends State<CalendarPage> {
 }
 
 class HourlyTimetable extends StatelessWidget {
-  final DateTime selectedDay;
+  final int selectedDay;
 
   HourlyTimetable({required this.selectedDay});
 
   @override
   Widget build(BuildContext context) {
     // Display selected date
-    String formattedDate = '${selectedDay.year}-${selectedDay.month}-${selectedDay.day}';
+    String formattedDate = '${selectedDay}';
 
     return Padding(
       padding: const EdgeInsets.all(8.0),
