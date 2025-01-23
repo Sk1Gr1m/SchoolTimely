@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CalendarScreen extends StatefulWidget {
+  const CalendarScreen({super.key});
+
   @override
   _CalendarScreenState createState() => _CalendarScreenState();
 }
@@ -106,7 +108,7 @@ class _CalendarScreenState extends State<CalendarScreen> {
 class DayCell extends StatelessWidget {
   final int day;
 
-  DayCell(this.day);
+  const DayCell(this.day, {super.key});
 
   @override
   Widget build(BuildContext context) {
