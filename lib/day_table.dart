@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:table_calendar/table_calendar.dart';
 
 
-class Day_page extends StatelessWidget {
+class Daypage extends StatelessWidget {
   final int  selectedDay;
 
 
-  Day_page({required this.selectedDay});
+  const Daypage({required this.selectedDay,super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +25,15 @@ class Day_page extends StatelessWidget {
 }
 
 class HourlyTimetable extends StatelessWidget {
+
   final int selectedDay;
 
-  HourlyTimetable({required this.selectedDay});
+  const HourlyTimetable({required this.selectedDay,super.key});
 
   @override
   Widget build(BuildContext context) {
     // Display selected date
-    String formattedDate = '${selectedDay}';
+    String formattedDate = '$selectedDay';
 
     return Padding(
       padding: const EdgeInsets.all(8.0),

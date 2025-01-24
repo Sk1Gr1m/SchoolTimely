@@ -36,31 +36,31 @@ class Schedule extends StatelessWidget {
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white)
                 ),
-                child: Lesson( time: '45',lesson:'Math',teacher:'Kiril Terziski'),
+                child: Lesson( time: '9:50 - 10:35',lesson:'Math',teacher:'Kiril Terziski'),
               ),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white)
                 ),
-                child:Lesson( time: '45',lesson:'Programirane',teacher:'Georgi Dimitrov'),
+                child:Lesson( time: '10:55 - 11:40',lesson:'Programirane',teacher:'Georgi Dimitrov'),
               ),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white)
                 ),
-                child: Lesson( time: '45',lesson:'Programirane',teacher:'Georgi Dimitrov'),
+                child: Lesson( time: '11:50 - 12:35',lesson:'Programirane',teacher:'Georgi Dimitrov'),
               ),
               Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white)
                 ),
-                child: Lesson( time: '45',lesson:'Programirane',teacher:'Georgi Dimitrov'),
+                child: Lesson( time: '12:45 - 13:30',lesson:'Programirane',teacher:'Georgi Dimitrov'),
               ),   
                Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.white)
                 ),
-                child: Lesson( time: '45',lesson:'Programirane',teacher:'Georgi Dimitrov'),
+                child: Lesson( time: '13:40 - 14:25',lesson:'Programirane',teacher:'Georgi Dimitrov'),
               ), 
             ],
           )
@@ -69,10 +69,10 @@ class Schedule extends StatelessWidget {
   }
 } 
 class Lesson extends StatelessWidget {
-  late String time;
-  late String lesson;
-  late String teacher;
-      Lesson({required this.time,required this.lesson,required this.teacher,super.key});
+  final String time;
+  final String lesson;
+  final String teacher;
+      const Lesson({required this.time,required this.lesson,required this.teacher,super.key});
       @override
   Widget build(BuildContext context) {
     return  Row(
@@ -83,9 +83,9 @@ class Lesson extends StatelessWidget {
         color: Colors.transparent,
         ),
         padding: EdgeInsets.all(10),
-        child: Center(child: Text(time),),
         width: 200,
         height: 85,
+        child: Center(child: Text(time),),
       ),  
       Expanded(child: Column(
         children:[
@@ -94,18 +94,18 @@ class Lesson extends StatelessWidget {
             color:Colors.transparent,
             ),     
             padding: EdgeInsets.all(10),
-            child: Center(child: Text(lesson),),
             width: 200,
-             height: 44,
+            height: 44,
+            child: Center(child: Text(lesson),),
           ), 
           Container(
             decoration: BoxDecoration(
             color: Colors.transparent,
             ),
             padding: EdgeInsets.all(10),
-            child: Center(child: Text(teacher),),
             width: 200,
-             height: 44,
+            height: 44,
+            child:  Center(child: Text(teacher),),
           ), 
         ],
       ))],

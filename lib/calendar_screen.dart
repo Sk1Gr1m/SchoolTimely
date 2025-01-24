@@ -118,7 +118,7 @@ class DayCell extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => Day_page(
+            builder: (context) => Daypage(
               selectedDay: day
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'calendar_screen.dart';
+import 'schedule.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -12,13 +13,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static  List<Widget> _widgetOptions = <Widget>[
+  static  final List<Widget> _widgetOptions = <Widget>[
     CalendarScreen(),
-    Text(
-      'Index 2: School',
-      style: optionStyle,
+    Center(
+      child: Schedule(),
     ),
   ];
 
@@ -60,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
               },
             ),
             ListTile(
-              title: const Text('School'),
+              title: const Text('Schedule'),
               selected: _selectedIndex == 1,
               onTap: () {
                 _onItemTapped(1);
