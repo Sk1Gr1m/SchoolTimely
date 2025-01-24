@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'calendar_screen.dart';
+import 'home.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),// easier colour manipulation
 
-        home: CalendarScreen(),
+        home: MyHomePage(title: 'SchoolTimely'),
     );
   }
 }

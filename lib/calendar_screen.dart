@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:schooltimely/day_table.dart';
 
 class CalendarScreen extends StatefulWidget {
   const CalendarScreen({super.key});
@@ -114,7 +115,14 @@ class DayCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        print("Selected Day: $day");
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Day_page(
+              selectedDay: day
+            ),
+          ),
+        );
       },
       child: Container(
         margin: EdgeInsets.all(4),
